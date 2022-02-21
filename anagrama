@@ -1,0 +1,24 @@
+#include <iostream>
+#include <algorithm>    
+#include <cstdlib>
+using namespace std;
+ 
+int main (){
+    string palavra;
+ 
+    printf("Digite uma palavra:");
+    cout << "Entre com a palavra" << endl;
+    cin >> palavra;
+ 
+    std::sort (palavra.begin(),palavra.end());
+ 
+    system("cls");
+    do {
+        std::cout << palavra << '\n';
+    } while ( std::next_permutation(palavra.begin(),palavra.end()) );
+ 
+ 
+ 
+    cin.ignore();
+    return 0;
+}
