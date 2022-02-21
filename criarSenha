@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<string.h>
+
+
+int validaSenha (char frase[20]){
+
+int num, numMinusculo, numMaiusculo, cont;
+
+for(int i = 0; frase[i] != '\0'; ++i){
+
+    if (strlen(frase) >= 8)
+        cont = 1;
+
+    if(frase[i] >= 'a' && frase[i] <= 'z'){
+        ++numMinusculo;
+    }
+    if(frase[i] >= 'A' && frase[i] <= 'Z'){
+        ++numMaiusculo;
+    }
+    if((frase[i] >= '0') && (frase[i] <= '9')){
+        ++num;
+    }
+}
+if ((cont == 1) && (numMinusculo > 0) && (numMaiusculo > 0) && (num > 0))
+        return 1;
+else
+        return 0;
+}
+
+int main(){
+char frase[20];
+int resultado;
+
+printf("Informe sua senha: \n");
+gets(frase);
+
+resultado = validaSenha(frase);
+
+printf("Resultado: %d", resultado);
+
+
+return 0;
+}
